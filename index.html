@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plastic Jungle</title>
+  <meta name="description" content="Plastic Jungle is a record label. A part of the Arketyp label family.">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta property="og:title" content="Plastic Jungle">
+  <meta property="og:description" content="Plastic Jungle is a record label. A part of the Arketyp label family.">
+  <meta property="og:url" content="https://plasticjungle.world">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1 class="logo" aria-label="Plastic Jungle">
+      <span class="logo-line" aria-hidden="true" data-text="PLASTIC"></span>
+      <span class="logo-line" aria-hidden="true" data-text="JUNGLE"></span>
+    </h1>
+  </header>
+
+  <main>
+    <section class="releases" aria-labelledby="releases-title">
+      <h2 id="releases-title" class="label">Releases</h2>
+      <ol class="release-list" id="release-list"></ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="label">Follow</h2>
+        <ul class="plain" id="socials"></ul>
+      </div>
+
+      <div>
+        <h2 class="label">Contact</h2>
+        <ul class="plain" id="contact"></ul>
+      </div>
+
+      <div class="signup-wrap">
+        <h2 class="label">Newsletter</h2>
+        <form class="signup" id="signup" novalidate>
+          <input type="email" name="EMAIL" placeholder="Email" autocomplete="email" required aria-label="Email">
+          <input type="tel" name="PHONE" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone">
+          <div class="hp" aria-hidden="true"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
+          <button type="submit">Sign up</button>
+          <p class="signup-msg" id="signup-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+    <a class="family" href="https://www.arketyp.se" target="_blank" rel="noopener">
+      <span>A part of the Arketyp label family</span>
+      <img src="assets/arketyp.svg" alt="Arketyp" width="139" height="35">
+    </a>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
