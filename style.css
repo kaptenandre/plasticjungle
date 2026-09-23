@@ -1,8 +1,10 @@
 :root {
   --bg: #000;
   --fg: #ff2200;
-  --dim: #8a1606;
+  --dim: #b0200a;
   --line: #ff2200;
+  --big: 16px;
+  --small: 11px;
   --gap: 16px;
   --side: clamp(24px, 10vw, 200px);
   --ease: cubic-bezier(.2, .8, .2, 1);
@@ -15,7 +17,7 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   background: var(--bg);
   color: var(--fg);
-  font: 400 14px/1.5 "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font: 400 var(--big)/1.5 "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   display: flex;
@@ -27,6 +29,9 @@ a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 2px; }
 :focus-visible { outline: 1px solid var(--fg); outline-offset: 2px; }
 .dim { color: var(--dim); }
+
+/* Two sizes only: --big for content, --small for labels and meta */
+.meta, .thead, .foot h2, .c-text, .signup-msg { font-size: var(--small); letter-spacing: .02em; }
 .plain { list-style: none; }
 
 /* One 12 column grid, full width, used by every row */
@@ -138,6 +143,7 @@ main { flex: 1; }
 .c-logo { grid-column: 10 / 13; justify-self: end; width: 88px; height: auto; }
 
 @media (max-width: 720px) {
+  :root { --big: 14px; }
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .logo { grid-column: 1 / 4; }
   .meta { grid-column: 4 / 7; }
