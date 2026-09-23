@@ -8,7 +8,6 @@ window.PJ = {
       format: "Single",
       artist: "Miike Snow, Yttling Jazz",
       title: "Ingrid The Sailor",
-      cover: "assets/covers/pj004rmx.jpg",
       links: [
         { label: "Spotify", url: "https://open.spotify.com/album/0vFgnBArl5j3o9EOGKIxAY" },
         { label: "Apple Music", url: "" },
@@ -20,7 +19,6 @@ window.PJ = {
       format: "Single",
       artist: "Miike Snow",
       title: "I Was A Sailor",
-      cover: "assets/covers/pj004.jpg",
       links: [
         { label: "Spotify", url: "https://open.spotify.com/album/2RPZ0G0ZFhbewbFhi6u4em" },
         { label: "Apple Music", url: "" },
@@ -32,7 +30,6 @@ window.PJ = {
       format: "Album",
       artist: "Miike Snow",
       title: "Happy To You",
-      cover: "assets/covers/pj002.jpg",
       links: [
         { label: "Spotify", url: "https://open.spotify.com/album/3MTR7tpvPt5Pt8xUv0npiQ" },
         { label: "Apple Music", url: "" },
@@ -44,7 +41,6 @@ window.PJ = {
       format: "Album",
       artist: "Miike Snow",
       title: "Miike Snow",
-      cover: "assets/covers/pj001.jpg",
       links: [
         { label: "Spotify", url: "https://open.spotify.com/album/5URSQpOdQq8x0TOrJdadIN" },
         { label: "Apple Music", url: "" },

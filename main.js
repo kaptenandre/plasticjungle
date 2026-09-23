@@ -16,10 +16,6 @@
         ? el("a", { href: l.url, target: "_blank", rel: "noopener", textContent: l.label })
         : el("span", { textContent: `${l.label} (soon)` }))
     );
-    const cover = r.cover
-      ? el("img", { className: "cover", src: r.cover, alt: `${r.artist}, ${r.title}`, loading: "lazy" })
-      : el("div", { className: "cover" });
-
     const toggle = el("span", { className: "c-toggle", textContent: "+" });
     toggle.setAttribute("aria-hidden", "true");
     const head = el("button", { className: "release-head grid", type: "button" },
@@ -34,7 +30,7 @@
 
     const body = el("div", { className: "release-body", id },
       el("div", { className: "release-inner" },
-        el("div", { className: "release-content grid" }, cover, el("ul", { className: "links" }, links))));
+        el("div", { className: "release-content grid" }, el("ul", { className: "links" }, links))));
     body.inert = true;
 
     const item = el("li", { className: "release" }, head, body);
