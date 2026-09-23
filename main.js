@@ -14,9 +14,9 @@
     const links = r.links.map((l) =>
       el("li", {}, l.url
         ? el("a", { href: l.url, target: "_blank", rel: "noopener", textContent: l.label })
-        : el("span", { textContent: `${l.label} (soon)` }))
+        : el("span", { textContent: `${l.label} .... PENDING` }))
     );
-    const toggle = el("span", { className: "c-toggle", textContent: "+" });
+    const toggle = el("span", { className: "c-toggle", textContent: "[+]" });
     toggle.setAttribute("aria-hidden", "true");
     const head = el("button", { className: "release-head grid", type: "button" },
       el("span", { className: "c-cat", textContent: r.cat }),
@@ -37,13 +37,26 @@
     head.addEventListener("click", () => {
       const open = item.classList.toggle("open");
       head.setAttribute("aria-expanded", String(open));
-      toggle.textContent = open ? "-" : "+";
+      toggle.textContent = open ? "[-]" : "[+]";
       body.inert = !open;
     });
     list.append(item);
   });
 
-  document.getElementById("release-count").textContent = `(${cfg.releases.length})`;
+  const n = String(cfg.releases.length).padStart(3, "0");
+  document.getElementById("release-count").innerHTML = `${n}<span class="rec-unit"> REC</span>`;
+  document.getElementById("rec-count").textContent = `${n} ENTRIES`;
+  document.getElementById("eol").textContent = "END OF LISTING";
+
+  // System clock, local time
+  const clock = document.getElementById("clock");
+  const pad = (v) => String(v).padStart(2, "0");
+  const tick = () => {
+    const d = new Date();
+    clock.textContent = `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+  tick();
+  setInterval(tick, 1000);
 
   // Socials and contact
   document.getElementById("socials").append(...cfg.socials.map((s) =>
@@ -59,9 +72,9 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = form.EMAIL.value.trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = "Please enter a valid email."; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = "ERR 01: INVALID ADDRESS"; return; }
     if (document.getElementById("hp").value) return;
-    if (!cfg.mailchimp.action) { msg.textContent = "Signup opens soon."; return; }
+    if (!cfg.mailchimp.action) { msg.textContent = "ERR 02: CHANNEL NOT OPEN. TRY LATER"; return; }
 
     const cb = `pj_mc_${Date.now()}`;
     const params = new URLSearchParams({ EMAIL: email, c: cb });
@@ -73,11 +86,11 @@
     const done = () => { delete window[cb]; script.remove(); };
     window[cb] = (res) => {
       done();
-      if (res.result === "success") { form.reset(); msg.textContent = "Thanks. You're on the list."; }
-      else msg.textContent = /already subscribed/i.test(res.msg) ? "You're already on the list." : "Something went wrong. Try again.";
+      if (res.result === "success") { form.reset(); msg.textContent = "OK: ADDRESS REGISTERED"; }
+      else msg.textContent = /already subscribed/i.test(res.msg) ? "OK: ADDRESS ALREADY REGISTERED" : "ERR 03: TRANSMISSION FAILED. RETRY";
     };
-    script.onerror = () => { done(); msg.textContent = "Something went wrong. Try again."; };
-    msg.textContent = "Sending…";
+    script.onerror = () => { done(); msg.textContent = "ERR 03: TRANSMISSION FAILED. RETRY"; };
+    msg.textContent = "TRANSMITTING...";
     document.body.append(script);
   });
 })();
