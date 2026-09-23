@@ -5,6 +5,7 @@ window.PJ = {
   releases: [
     {
       cat: "PJ004RMX",
+      format: "Single",
       artist: "Miike Snow, Yttling Jazz",
       title: "Ingrid The Sailor",
       cover: "assets/covers/pj004rmx.jpg",
@@ -16,6 +17,7 @@ window.PJ = {
     },
     {
       cat: "PJ004",
+      format: "Single",
       artist: "Miike Snow",
       title: "I Was A Sailor",
       cover: "assets/covers/pj004.jpg",
@@ -27,6 +29,7 @@ window.PJ = {
     },
     {
       cat: "PJ002",
+      format: "Album",
       artist: "Miike Snow",
       title: "Happy To You",
       cover: "assets/covers/pj002.jpg",
@@ -38,6 +41,7 @@ window.PJ = {
     },
     {
       cat: "PJ001",
+      format: "Album",
       artist: "Miike Snow",
       title: "Miike Snow",
       cover: "assets/covers/pj001.jpg",

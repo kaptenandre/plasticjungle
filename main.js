@@ -20,12 +20,13 @@
       ? el("img", { className: "cover", src: r.cover, alt: `${r.artist}, ${r.title}`, loading: "lazy" })
       : el("div", { className: "cover" });
 
-    const toggle = el("span", { className: "toggle" });
+    const toggle = el("span", { className: "c-toggle", textContent: "+" });
     toggle.setAttribute("aria-hidden", "true");
-    const head = el("button", { className: "release-head", type: "button" },
-      el("span", { className: "cat", textContent: r.cat }),
-      el("span", { className: "artist", textContent: r.artist }),
-      el("span", { className: "title", textContent: r.title }),
+    const head = el("button", { className: "release-head grid", type: "button" },
+      el("span", { className: "c-cat", textContent: r.cat }),
+      el("span", { className: "c-artist", textContent: r.artist }),
+      el("span", { className: "c-title", textContent: r.title }),
+      el("span", { className: "c-format", textContent: r.format || "" }),
       toggle,
     );
     head.setAttribute("aria-expanded", "false");
@@ -33,17 +34,20 @@
 
     const body = el("div", { className: "release-body", id },
       el("div", { className: "release-inner" },
-        el("div", { className: "release-content" }, cover, el("ul", { className: "links" }, links))));
+        el("div", { className: "release-content grid" }, cover, el("ul", { className: "links" }, links))));
     body.inert = true;
 
     const item = el("li", { className: "release" }, head, body);
     head.addEventListener("click", () => {
       const open = item.classList.toggle("open");
       head.setAttribute("aria-expanded", String(open));
+      toggle.textContent = open ? "-" : "+";
       body.inert = !open;
     });
     list.append(item);
   });
+
+  document.getElementById("release-count").textContent = `(${cfg.releases.length})`;
 
   // Socials and contact
   document.getElementById("socials").append(...cfg.socials.map((s) =>
