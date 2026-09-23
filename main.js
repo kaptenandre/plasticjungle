@@ -46,7 +46,6 @@
   const n = String(cfg.releases.length).padStart(3, "0");
   document.getElementById("release-count").innerHTML = `${n}<span class="rec-unit"> REC</span>`;
   document.getElementById("rec-count").textContent = `${n} ENTRIES`;
-  document.getElementById("eol").textContent = "END OF LISTING";
 
   // System clock, local time
   const clock = document.getElementById("clock");

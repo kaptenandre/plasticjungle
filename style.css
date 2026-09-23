@@ -33,7 +33,7 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .dim { color: var(--dim); }
 
 /* Two sizes only: --big for content, --small for labels and meta */
-.meta, .thead, .foot h2, .c-text, .signup-msg, .eol { font-size: var(--small); letter-spacing: .06em; }
+.meta, .thead, .foot h2, .c-text, .signup-msg { font-size: var(--small); letter-spacing: .06em; }
 .plain { list-style: none; }
 
 /* One 12 column grid, full width, used by every row */
@@ -52,7 +52,6 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .status dt { color: var(--dim); }
 .cursor { display: inline-block; width: .6em; height: 1em; margin-left: .3em; vertical-align: -2px; background: currentColor; animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.eol { color: var(--dim); padding-top: 8px; }
 
 .pj-logo { display: block; width: 100%; max-width: 240px; height: auto; overflow: visible; }
 
@@ -85,7 +84,6 @@ main { flex: 1; }
 .c-title { grid-column: 6 / 10; }
 .c-format { grid-column: 10 / 12; }
 .c-toggle { grid-column: 12 / 13; text-align: right; white-space: nowrap; }
-.eol .c-cat { grid-column: 1 / -1; }
 
 .thead { color: var(--dim); padding-bottom: 4px; }
 
