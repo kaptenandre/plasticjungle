@@ -6,4 +6,4 @@ Static label site for plasticjungle.world. No build step: open `index.html` or s
 - Releases come from the Plastic Jungle tab in the Arketyp Group Catalog.
 - Links with an empty `url` show as "(soon)".
 - `assets/plastic-jungle.svg` is the label logo (also inlined in `index.html` so it can be animated).
-- `assets/arketyp.svg` is the Arketyp wordmark from arketyp.se, rotated to horizontal.
+- `assets/arketyp-symbol.svg` is the Arketyp "A" symbol from arketypgroup.com (inlined in the footer).
