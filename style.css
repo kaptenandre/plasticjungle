@@ -75,7 +75,15 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 @keyframes fill-in { to { fill-opacity: 1; stroke-width: 0; } }
 @keyframes fade { to { opacity: 1; } }
 
-main, .footer, .meta { opacity: 0; animation: fade .6s ease forwards 2s; }
+/* After the logo, every line prints in one after another, left to right */
+body .seq.seq {
+  animation: print .3s steps(8) backwards;
+  animation-delay: calc(2.2s + var(--seq) * 60ms);
+}
+@keyframes print {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
 main { flex: 1; }
 
 /* Release table */
@@ -87,8 +95,9 @@ main { flex: 1; }
 
 .thead { color: var(--dim); padding-bottom: 4px; }
 
-.release-list { list-style: none; border-top: 1px solid var(--line); margin: 0 var(--side); }
+.release-list { list-style: none; margin: 0 var(--side); }
 .release { border-bottom: 1px solid var(--line); }
+.release:first-child { border-top: 1px solid var(--line); }
 
 .release-head {
   width: 100%;
@@ -177,6 +186,6 @@ main { flex: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pj-logo path, main, .footer, .meta { animation: none; opacity: 1; fill-opacity: 1; stroke: none; }
+  .pj-logo path, body .seq.seq { animation: none; fill-opacity: 1; stroke: none; clip-path: none; }
   .release-body { transition: none; }
 }

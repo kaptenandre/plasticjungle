@@ -57,6 +57,7 @@
   tick();
   setInterval(tick, 1000);
 
+
   // Socials and contact
   document.getElementById("socials").append(...cfg.socials.map((s) =>
     el("li", {}, el("a", { href: s.url, target: "_blank", rel: "noopener", textContent: s.label }))));
@@ -92,4 +93,17 @@
     msg.textContent = "TRANSMITTING...";
     document.body.append(script);
   });
+
+  // Reveal order after the logo: header, catalogue, footer
+  const order = [
+    ".status > *", ".top nav a",
+    ".thead > *", ".release",
+    ".foot h2", ".foot li", ".signup > :not(.hp)",
+    ".family",
+  ];
+  let seq = 0;
+  order.forEach((sel) => document.querySelectorAll(sel).forEach((node) => {
+    node.classList.add("seq");
+    node.style.setProperty("--seq", seq++);
+  }));
 })();
