@@ -3,8 +3,8 @@
   --fg: #ff2200;
   --dim: #b0200a;
   --line: #ff2200;
-  --big: 13px;
-  --small: 10px;
+  --big: 11px;
+  --small: 9px;
   --gap: 16px;
   --side: clamp(24px, 10vw, 200px);
   --ease: cubic-bezier(.2, .8, .2, 1);
@@ -158,7 +158,7 @@ main { flex: 1; }
 .c-logo { grid-column: 10 / 13; justify-self: end; width: 88px; height: auto; }
 
 @media (max-width: 720px) {
-  :root { --big: 12px; }
+  :root { --big: 11px; }
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .logo { grid-column: 1 / 4; }
   .meta { grid-column: 4 / 7; }
