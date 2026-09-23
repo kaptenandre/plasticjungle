@@ -157,12 +157,12 @@ main { flex: 1; }
   border-top: 1px solid var(--line);
   margin: 0 var(--side);
   padding: 12px 0 48px;
-  align-items: end;
+  align-items: center;
 }
 .family:hover { text-decoration: none; }
 .family:hover .c-text { text-decoration: underline; text-underline-offset: 2px; }
 .c-text { grid-column: 1 / 7; }
-.c-logo { grid-column: 10 / 13; justify-self: end; width: auto; height: 28px; }
+.c-logo { grid-column: 10 / 13; justify-self: end; width: auto; height: 20px; }
 
 @media (max-width: 720px) {
   :root { --big: 11px; }
