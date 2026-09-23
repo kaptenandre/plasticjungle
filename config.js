@@ -51,10 +51,7 @@ window.PJ = {
   ],
 
   socials: [
-    { label: "Instagram", url: "https://www.instagram.com/" },
-    { label: "Spotify", url: "https://open.spotify.com/" },
-    { label: "YouTube", url: "https://www.youtube.com/" },
-    { label: "TikTok", url: "https://www.tiktok.com/" },
+    { label: "Instagram", url: "https://www.instagram.com/" }, // TODO: label account URL
   ],
 
   contact: {
