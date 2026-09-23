@@ -1,8 +1,8 @@
 :root {
-  --bg: #fff;
-  --fg: #000;
-  --dim: #8c8c8c;
-  --line: #000;
+  --bg: #000;
+  --fg: #ff2200;
+  --dim: #8a1606;
+  --line: #ff2200;
   --gap: 16px;
   --side: clamp(24px, 10vw, 200px);
   --ease: cubic-bezier(.2, .8, .2, 1);
@@ -118,6 +118,8 @@ main { flex: 1; }
   padding: 4px 0;
 }
 .signup input::placeholder { color: var(--dim); }
+.signup input { color: var(--fg); caret-color: var(--fg); }
+::selection { background: var(--fg); color: var(--bg); }
 .signup button { all: unset; cursor: pointer; justify-self: start; margin-top: 8px; }
 .signup button:hover { text-decoration: underline; text-underline-offset: 2px; }
 .signup button:focus-visible { outline: 1px solid var(--fg); outline-offset: 2px; }
@@ -133,7 +135,7 @@ main { flex: 1; }
 .family:hover { text-decoration: none; }
 .family:hover .c-text { text-decoration: underline; text-underline-offset: 2px; }
 .c-text { grid-column: 1 / 7; }
-.c-logo { grid-column: 10 / 13; justify-self: end; height: 22px; width: auto; }
+.c-logo { grid-column: 10 / 13; justify-self: end; width: 88px; height: auto; }
 
 @media (max-width: 720px) {
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
