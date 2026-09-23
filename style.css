@@ -44,26 +44,26 @@ a:hover { color: var(--dim); }
   padding-bottom: clamp(48px, 12vh, 140px);
 }
 
-.logo {
-  font-weight: 800;
-  font-size: clamp(56px, 16vw, 240px);
-  line-height: .86;
-  letter-spacing: -.045em;
+.logo { width: clamp(220px, 38vw, 540px); }
+.pj-logo { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* The recycling hands spin into place, then the wordmark wipes in */
+.pj-icon {
+  transform-box: fill-box;
+  transform-origin: 50% 58%;
+  animation: spin-in 1.6s var(--ease) both .1s;
 }
+.pj-hand { opacity: 0; animation: fade .5s ease forwards; }
+.pj-hand:nth-child(1) { animation-delay: .2s; }
+.pj-hand:nth-child(2) { animation-delay: .35s; }
+.pj-hand:nth-child(3) { animation-delay: .5s; }
+.pj-word { clip-path: inset(0 100% 0 0); animation: wipe 1s var(--ease) forwards 1.1s; }
 
-.logo-line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
-
-.logo-line .ch {
-  display: inline-block;
-  transform: translateY(105%);
-  animation: rise 1s var(--ease) forwards;
-  animation-delay: calc(var(--i) * 45ms + 150ms);
-}
-
-@keyframes rise { to { transform: none; } }
+@keyframes spin-in { from { transform: rotate(-240deg) scale(.5); } to { transform: none; } }
+@keyframes wipe { to { clip-path: inset(0 0 0 0); } }
 
 /* Everything below the logo fades in once it lands */
-main, .footer { opacity: 0; animation: fade .8s ease forwards 1.1s; }
+main, .footer { opacity: 0; animation: fade .8s ease forwards 1.8s; }
 @keyframes fade { to { opacity: 1; } }
 
 /* Releases */
@@ -78,7 +78,7 @@ main { flex: 1; padding: 0 var(--pad); }
   width: 100%;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 7ch 1fr 1.4fr auto;
+  grid-template-columns: 9ch 1fr 1.4fr auto;
   gap: 16px;
   align-items: baseline;
   padding: 18px 0;
@@ -110,7 +110,7 @@ main { flex: 1; padding: 0 var(--pad); }
   display: grid;
   grid-template-columns: minmax(0, 280px) 1fr;
   gap: 32px;
-  padding: 8px 0 32px calc(7ch + 16px);
+  padding: 8px 0 32px calc(9ch + 16px);
   font-size: clamp(15px, 1.6vw, 20px);
 }
 
@@ -163,16 +163,16 @@ main { flex: 1; padding: 0 var(--pad); }
 .family:hover { color: var(--fg); }
 
 @media (max-width: 720px) {
-  .release-head { grid-template-columns: 6ch 1fr auto; row-gap: 2px; }
+  .release-head { grid-template-columns: 9ch 1fr auto; row-gap: 2px; }
   .release-head .title { grid-column: 2; grid-row: 2; }
   .release-head .toggle { grid-column: 3; grid-row: 1; }
-  .release-content { grid-template-columns: 1fr; padding-left: 0; gap: 20px; }
+  .release-content { grid-template-columns: minmax(0, 240px); padding-left: 0; gap: 20px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .signup-wrap { grid-column: 1 / -1; }
   .family { flex-direction: column-reverse; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-line .ch, main, .footer { animation: none; transform: none; opacity: 1; }
+  .pj-icon, .pj-hand, .pj-word, main, .footer { animation: none; transform: none; opacity: 1; clip-path: none; }
   .release-body, .toggle::after { transition: none; }
 }

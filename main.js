@@ -7,16 +7,6 @@
     return n;
   };
 
-  // Logo: split each line into characters for the staggered reveal
-  let i = 0;
-  document.querySelectorAll(".logo-line").forEach((line) => {
-    [...line.dataset.text].forEach((c) => {
-      const ch = el("span", { className: "ch", textContent: c });
-      ch.style.setProperty("--i", i++);
-      line.append(ch);
-    });
-  });
-
   // Releases
   const list = document.getElementById("release-list");
   cfg.releases.forEach((r) => {

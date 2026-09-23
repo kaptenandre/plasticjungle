@@ -1,18 +1,51 @@
 // Edit this file to update the site. No build step needed.
 window.PJ = {
+  // Newest first. Source: Arketyp Group Catalog, Plastic Jungle tab.
+  // A link with an empty url shows as "(soon)".
   releases: [
+    {
+      cat: "PJ004RMX",
+      artist: "Miike Snow, Yttling Jazz",
+      title: "Ingrid The Sailor",
+      cover: "assets/covers/pj004rmx.jpg",
+      links: [
+        { label: "Spotify", url: "https://open.spotify.com/album/0vFgnBArl5j3o9EOGKIxAY" },
+        { label: "Apple Music", url: "" },
+        { label: "Tidal", url: "" },
+      ],
+    },
+    {
+      cat: "PJ004",
+      artist: "Miike Snow",
+      title: "I Was A Sailor",
+      cover: "assets/covers/pj004.jpg",
+      links: [
+        { label: "Spotify", url: "https://open.spotify.com/album/2RPZ0G0ZFhbewbFhi6u4em" },
+        { label: "Apple Music", url: "" },
+        { label: "Tidal", url: "" },
+      ],
+    },
+    {
+      cat: "PJ002",
+      artist: "Miike Snow",
+      title: "Happy To You",
+      cover: "assets/covers/pj002.jpg",
+      links: [
+        { label: "Spotify", url: "https://open.spotify.com/album/3MTR7tpvPt5Pt8xUv0npiQ" },
+        { label: "Apple Music", url: "" },
+        { label: "Tidal", url: "" },
+      ],
+    },
     {
       cat: "PJ001",
       artist: "Miike Snow",
-      title: "Albumtitel",
-      year: 2026,
-      cover: "", // e.g. "assets/covers/pj001.jpg"
+      title: "Miike Snow",
+      cover: "assets/covers/pj001.jpg",
       links: [
-        { label: "Spotify", url: "" },
+        { label: "Spotify", url: "https://open.spotify.com/album/5URSQpOdQq8x0TOrJdadIN" },
         { label: "Apple Music", url: "" },
         { label: "Tidal", url: "" },
-        { label: "Bandcamp", url: "" },
-        { label: "Buy vinyl", url: "" },
+        { label: "Buy LP", url: "" },
       ],
     },
   ],
